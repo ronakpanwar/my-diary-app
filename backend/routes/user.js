@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const JWT_SECRET = "villan@123";
 const fetchuser = require('../midlewers/fetchuser');
