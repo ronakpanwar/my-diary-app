@@ -7,7 +7,7 @@ function Navbar() {
 
     const getUserInfo = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/api/user/getuser`, {
+            const response = await fetch(`https://my-diary-app-api.vercel.app/user/getuser`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
