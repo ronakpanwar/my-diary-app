@@ -19,6 +19,8 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.options('*', cors());
+
 connectMongoDb(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>console.log('mongoBb Connected')).catch((err)=> console.log("error",err));
 
 app.use('/api/user', userSchema);
