@@ -15,7 +15,7 @@ const url = "https://my-diary-app-api.vercel.app/";
 
   const getNote = async () => {
     // todo : api call
-    const response = await fetch(`${url}api/notes/fetch-all-notes`, {
+    const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/fetch-all-notes`, {
       method: "GET",
 
       headers: {
@@ -31,7 +31,7 @@ const url = "https://my-diary-app-api.vercel.app/";
   // add note 
   const addNote = async (title, content, tag) => {
     // todo : api call
-    const response = await fetch(`${url}api/notes/add-note`, {
+    const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/add-note`, {
       method: "POST",
 
       headers: {
@@ -49,7 +49,7 @@ const url = "https://my-diary-app-api.vercel.app/";
   // delete note 
   const deleteNote = async(id) => {
     // todo : api call
-    const response = await fetch(`${url}api/notes/delete-note/${id}`, {
+    const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/delete-note/${id}`, {
       method: "PUT",
 
       headers: {
@@ -69,7 +69,7 @@ const url = "https://my-diary-app-api.vercel.app/";
   const updateNote = async (id, title, content, tag) => {
     try {
       // API call to update the note
-      const response = await fetch(`${url}api/notes/update-note/${id}`, {
+      const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/update-note/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
