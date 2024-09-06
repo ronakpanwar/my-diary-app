@@ -14,7 +14,7 @@ const URL = 'mongodb+srv://vilanrn:zEUwF5JQV87lkhcf@my-diary.75arg.mongodb.net/'
 const app = express();
 app.use(cors(
     {
-        origin:[""],
+        origin:["https://my-diary-app-frontend.vercel.app"],
         methods:["POST","GET"],
         credentials:true
     }
