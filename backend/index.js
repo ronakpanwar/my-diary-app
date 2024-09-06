@@ -12,7 +12,13 @@ const URL = 'mongodb+srv://vilanrn:zEUwF5JQV87lkhcf@my-diary.75arg.mongodb.net/'
 
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin:[""],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 app.use(express.json());
 
 connectMongoDb(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>console.log('mongoBb Connected')).catch((err)=> console.log("error",err));

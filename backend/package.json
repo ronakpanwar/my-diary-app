@@ -17,7 +17,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "nodemon backend/index",
-    "start": "react-scripts start",
+    "start": "node backend/index",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
