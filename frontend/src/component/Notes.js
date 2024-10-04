@@ -4,11 +4,11 @@ import Card from './subComponent/card';
 
 function Notes() {
   const context = useContext(noteContext);
-  const { notes = [],notesLoading, getNote, updateNote } = context;
+  const { notes = [], notesLoading, getNote, updateNote } = context;
 
   useEffect(() => {
     getNote();
-  }, [getNote]);
+  }, []);
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [note, setNote] = useState({ id: "", etitle: "", econtent: "", etag: "" });
@@ -30,7 +30,7 @@ function Notes() {
   return (
     <div className="container mx-auto p-4">
       {showUpdateForm && (
-       
+
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg p-6 w-96 relative">
             <h2 className="text-xl font-semibold mb-4">Update Note</h2>
@@ -102,9 +102,11 @@ function Notes() {
 
       <div className="my-3">
         <h1 className="text-2xl font-bold mb-3 text-center">Your Notes</h1>
-       {notesLoading ? (<div className='text-center'>
-        Loding....
-       </div>) :(notes.length === 0 ? (
+        {notesLoading ? (
+          <div className="flex justify-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        ) : (notes.length === 0 ? (
           <p className="text-gray-600 text-center">No notes to display</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -113,7 +115,7 @@ function Notes() {
             ))}
           </div>
         ))
-       }
+        }
       </div>
     </div>
   );
