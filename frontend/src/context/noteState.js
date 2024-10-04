@@ -12,20 +12,29 @@ const url = "https://my-diary-app-api.vercel.app/";
  const notesInitial = []
 
   const [notes, setNotes] = useState(notesInitial);
+  const [notesLoading , setNotesLoading] = useState(false);
 
   const getNote = async () => {
     // todo : api call
-    const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/fetch-all-notes`, {
-      method: "GET",
-
-      headers: {
-        "Content-Type": "application/json",
-        'auth-token' : localStorage.getItem('token')
-      }
-    });
-    const json = await response.json()
-   
-    setNotes(json)
+    try {
+      const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/fetch-all-notes`, {
+        method: "GET",
+  
+        headers: {
+          "Content-Type": "application/json",
+          'auth-token' : localStorage.getItem('token')
+        }
+      });
+      setNotesLoading(true);
+      const json = await response.json()
+     
+      setNotes(json)
+    } catch (error) {
+      
+    }finally{
+   setNotesLoading(false);
+    }
+  
   }
 
   // add note 
@@ -49,20 +58,25 @@ const url = "https://my-diary-app-api.vercel.app/";
   // delete note 
   const deleteNote = async(id) => {
     // todo : api call
-    const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/delete-note/${id}`, {
-      method: "PUT",
+    try {
+      const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/delete-note/${id}`, {
+        method: "PUT",
+  
+        headers: {
+          "Content-Type": "application/json",
+           'auth-token' :localStorage.getItem('token')
+        }
+      });
+      const json = await response.json()
 
-      headers: {
-        "Content-Type": "application/json",
-         'auth-token' :localStorage.getItem('token')
-      }
-    });
-    const json = await response.json()
-
-
-
-    const newNote = notes.filter((note) => { return note.id !== id });
+      const newNote = notes.filter((note) => { return note.id !== id });
     setNotes(newNote);
+
+
+    } catch (error) {
+      console.log(error);
+    }
+  
   }
 
   //update notes
@@ -101,7 +115,7 @@ const url = "https://my-diary-app-api.vercel.app/";
 
 
   return (
-    <NoteContext.Provider value={{ notes, addNote, deleteNote, updateNote , getNote }}>
+    <NoteContext.Provider value={{ notes,notesLoading, addNote, deleteNote, updateNote , getNote }}>
       {props.children}
     </NoteContext.Provider>
   )
