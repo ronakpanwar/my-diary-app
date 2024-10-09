@@ -21,7 +21,7 @@ function SignIn() {
 
   
   const handleBack =()=>{
-    navigate('/notes');
+    navigate('/');
 }
 
 
@@ -55,7 +55,7 @@ function SignIn() {
       if (json.success) {
         // Save auth token and navigate to home
         localStorage.setItem('token', json.authToken);
-        navigate('/');
+        navigate('/notes');
       } else {
         alert('Invalid credentials');
       }
