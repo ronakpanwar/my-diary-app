@@ -27,6 +27,7 @@ function SignUp() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true)
         try {
             const response = await fetch('https://my-diary-app-api.vercel.app/api/user/add-user', {
                 method: 'POST',
@@ -35,7 +36,7 @@ function SignUp() {
                 },
                 body: JSON.stringify(data)
             });
-            setLoading(true)
+          
             const json = await response.json();
             //   console.log(json);
 

@@ -41,7 +41,7 @@ function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await fetch('https://my-diary-app-api.vercel.app/api/user/login', {
         method: 'POST',
@@ -50,7 +50,7 @@ function SignIn() {
         },
         body: JSON.stringify(data)
       });
-      setLoading(true);
+      
       const json = await response.json();
 
       if (json.success) {

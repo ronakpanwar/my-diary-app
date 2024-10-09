@@ -26,7 +26,7 @@ router.post('/add-user', [
         // Check if the user already exists
         let user = await User.findOne({ email });
         if (user) {
-            return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
+            return res.status(400).json({ errors:  'User already exists' });
         }
 
         // Hash the password
@@ -72,12 +72,12 @@ router.post('/login', [
     try {
        let user = await User.findOne({ email });
        if (!user) {
-          return res.status(400).json({ sucsess:"false", errors: 'plese enter the correct information' });
+          return res.status(400).json({ sucsess:"false", errors: 'plese enter the correct email' });
        }
  
        const passwordcode = await bcrypt.compare(password, user.password);
        if (!passwordcode) {
-          return res.status(400).json({ sucsess:"false", errors: 'plese enter the correct information' });
+          return res.status(400).json({ sucsess:"false", errors: 'plese enter the correct password' });
        }
  
        const data = {
