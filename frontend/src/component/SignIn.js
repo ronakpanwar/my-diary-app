@@ -32,7 +32,7 @@ function SignIn() {
       ...data,
       [name]: value
     });
-    // Clear errors on input change
+    
     setErrors({
       ...errors,
       [name]: ''
@@ -58,7 +58,7 @@ function SignIn() {
         localStorage.setItem('token', json.authToken);
         navigate('/notes');
       } else {
-        alert('Invalid credentials');
+        alert(json.errors);
       }
     } catch (error) {
       console.error('Error during login:', error);
@@ -127,7 +127,7 @@ function SignIn() {
               {
                 loading ? (
                   <div className="flex justify-center ">
-                    <div className="animate-spin bg-[#48CFCB]  rounded-full h-8 w-8 border-t-2 border-b-2 border-black"></div>
+                    <div className="animate-spin bg-[#229799]  rounded-full h-8 w-8 border-t-2 border-b-2 border-black"></div>
                   </div>
                 ) : (
                   <h1>

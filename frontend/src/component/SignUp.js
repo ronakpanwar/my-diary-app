@@ -44,7 +44,7 @@ function SignUp() {
                 localStorage.setItem('token', json.authToken);
                 navigate('/notes');
             } else {
-                alert('Invalid credentials');
+                alert(json.errors);
             }
         } catch (error) {
             console.error('Error during signUp:', error);

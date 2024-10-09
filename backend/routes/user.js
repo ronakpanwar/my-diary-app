@@ -77,7 +77,7 @@ router.post('/login', [
  
        const passwordcode = await bcrypt.compare(password, user.password);
        if (!passwordcode) {
-          return res.status(400).json({ sucsess, errors: 'plese enter the correct information' });
+          return res.status(400).json({ sucsess:"false", errors: 'plese enter the correct information' });
        }
  
        const data = {
