@@ -4,25 +4,26 @@ import { useNavigate } from 'react-router-dom';
 function SignIn() {
   const navigate = useNavigate();
 
-  // State for input values
+
   const [data, setData] = useState({
     email: '',
     password: ''
   });
 
-  // State for errors
   const [errors, setErrors] = useState({
     email: '',
     password: ''
   });
 
-  // State for toggling password visibility
+
   const [showPassword, setShowPassword] = useState(false);
 
-  
-  const handleBack =()=>{
+  const [loading, setLoading] = useState(false)
+
+  const handleBack = () => {
     navigate('/');
-}
+  }
+
 
 
   const handleChange = (e) => {
@@ -49,7 +50,7 @@ function SignIn() {
         },
         body: JSON.stringify(data)
       });
-
+      setLoading(true);
       const json = await response.json();
 
       if (json.success) {
@@ -61,13 +62,15 @@ function SignIn() {
       }
     } catch (error) {
       console.error('Error during login:', error);
+    } finally {
+      setLoading(false)
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-black py-12 px-4 ">
       <div className="max-w-md w-full space-y-8">
-      <span className='bg-white py-2 px-3 rounded-full hover:bg-[#48CFCB] cursor-pointer' onClick={handleBack}><i class="fa-solid fa-arrow-left"></i></span> 
+        <span className='bg-white py-2 px-3 rounded-full hover:bg-[#48CFCB] cursor-pointer' onClick={handleBack}><i class="fa-solid fa-arrow-left"></i></span>
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-[#48CFCB]">Sign in to your account</h2>
         </div>
@@ -119,15 +122,25 @@ function SignIn() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-black bg-[#48CFCB] hover:bg-[#48CFCB] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#48CFCB]"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-black bg-[#48CFCB] hover:bg-[#229799] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#48CFCB]"
             >
-              Sign in
+              {
+                loading ? (
+                  <div className="flex justify-center ">
+                    <div className="animate-spin bg-[#48CFCB]  rounded-full h-8 w-8 border-t-2 border-b-2 border-black"></div>
+                  </div>
+                ) : (
+                  <h1>
+                    Sign in</h1>
+                )
+              }
             </button>
           </div>
-          <a href="/sign-up" className="underline text-[#48CFCB] hover:text-white my-4">
-            Create Account
-          </a>
+
         </form>
+        <a href="/sign-up" className=" underline text-[#48CFCB] hover:text-white ">
+          Create Account
+        </a>
       </div>
     </div>
   );
