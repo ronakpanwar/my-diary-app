@@ -13,10 +13,7 @@ const UserProfile = () => {
         // Add other fields as needed based on your API response
     });
 
-    const token = localStorage.getItem('token');
-    if (!token) {
-        navigate('/sign-in');
-    }
+   
 
     const [loading, setLoading] = useState(false);
 
@@ -27,6 +24,7 @@ const UserProfile = () => {
         // Function to fetch user profile data from API
         const fetchUserProfile = async () => {
             try {
+                setLoading(true)
                 const response = await fetch('https://my-diary-app-api.vercel.app/api/user/getuser', {
                     method: 'POST',
                     headers: {
@@ -34,7 +32,7 @@ const UserProfile = () => {
                         'auth-token': localStorage.getItem('token')
                     }
                 });
-                setLoading(true)
+           
                 if (!response.ok) {
                     throw new Error('Failed to fetch user profile');
                 }
@@ -47,7 +45,10 @@ const UserProfile = () => {
                 setLoading(false)
             }
         };
-
+        const token = localStorage.getItem('token');
+        if (!token) {
+            navigate('/sign-in');
+        }
         fetchUserProfile();
         getNote();
     }, []);

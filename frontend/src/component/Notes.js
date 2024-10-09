@@ -13,10 +13,14 @@ function Notes() {
     getNote();
   }, []);
 
-  const token = localStorage.getItem('token');
-  if(!token){
-    navigate('/sign-in');
-  }
+  useEffect(()=>{
+    const token = localStorage.getItem('token');
+    if(!token){
+      navigate('/');
+    }
+  
+  },[]);
+
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [note, setNote] = useState({ id: "", etitle: "", econtent: "", etag: "" });
