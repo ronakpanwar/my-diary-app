@@ -19,7 +19,7 @@ const url = "https://my-diary-app-api.vercel.app/";
     try {
       const response = await fetch(`https://my-diary-app-api.vercel.app/api/notes/fetch-all-notes`, {
         method: "GET",
-  
+      
         headers: {
           "Content-Type": "application/json",
           'auth-token' : localStorage.getItem('token')

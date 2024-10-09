@@ -32,7 +32,8 @@ function AddNote() {
     e.preventDefault();
     // Handle submitting the note (e.g., saving to database, etc.)
     addNote(data.title , data.content )
-      console.log(data);
+    navigate('/notes')
+      // console.log(data);
   };
 
   return (

@@ -43,14 +43,14 @@ function Navbar() {
         };
 
         return (
-            <nav className="bg-[#373A40]">
+            <nav className="bg-black">
                 <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-16 items-center justify-between">
                         {/* Mobile menu button */}
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                             <button
                                 type="button"
-                                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-[#686D76] hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                                className="inline-flex items-center justify-center rounded-md p-2 text-[#48CFCB] hover:bg-[#686D76] hover:text-[#229799] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                                 aria-controls="mobile-menu"
                                 aria-expanded="false"
                             >
@@ -80,14 +80,14 @@ function Navbar() {
                             <div className="hidden sm:ml-6 sm:flex space-x-4">
                                 <a
                                     href="/"
-                                    className="rounded-md  hover:bg-[#686D76] px-3 py-2 text-sm font-medium text-white"
+                                    className="rounded-md   px-3 py-2 text-sm font-medium text-[#48CFCB] hover:text-[#229799]"
                                     aria-current="page"
                                 >
                                     Home
                                 </a>
                                 <a
                                     href="/add-note"
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-[#686D76] hover:text-white"
+                                    className="rounded-md px-3 py-2 text-sm font-medium text-[#48CFCB]  hover:text-[#229799]"
                                 >
                                     Add Notes
                                 </a>

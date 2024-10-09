@@ -1,14 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
 import noteContext from '../context/noteContext';
 import Card from './subComponent/card';
+import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 function Notes() {
+  const navigate = useNavigate();
   const context = useContext(noteContext);
   const { notes = [], notesLoading, getNote, updateNote } = context;
 
   useEffect(() => {
     getNote();
   }, []);
+
+  const token = localStorage.getItem('token');
+  if(!token){
+    navigate('/sign-in');
+  }
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [note, setNote] = useState({ id: "", etitle: "", econtent: "", etag: "" });
@@ -28,10 +36,12 @@ function Notes() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container mx-auto p-4">
       {showUpdateForm && (
 
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F5F5F5] bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg p-6 w-96 relative">
             <h2 className="text-xl font-semibold mb-4">Update Note</h2>
             <form className="space-y-4">
@@ -101,7 +111,7 @@ function Notes() {
       )}
 
       <div className="my-3">
-        <h1 className="text-2xl font-bold mb-3 text-center">Your Notes</h1>
+        <h1 className="text-2xl font-bold mb-3 text-center">Your Notes...</h1>
         {notesLoading ? (
           <div className="flex justify-center">
             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
@@ -118,6 +128,7 @@ function Notes() {
         }
       </div>
     </div>
+    </>
   );
 }
 

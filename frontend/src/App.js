@@ -21,7 +21,7 @@ function App() {
    <Main>
    <>
    <NoteState>
-<Navbar/>
+
 <Routes>
   <Route path='/*' element={<Home/>}/>
   <Route path='/add-note' element={<AddNote/>}/>
