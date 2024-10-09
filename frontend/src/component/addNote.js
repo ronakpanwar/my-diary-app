@@ -2,6 +2,7 @@
 import React, { useState , useContext } from 'react';
 import noteContext  from '../context/noteContext';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 function AddNote() {
     const navigate = useNavigate();
@@ -37,6 +38,8 @@ function AddNote() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="max-w-2xl mx-auto mt-10">
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
@@ -78,6 +81,7 @@ function AddNote() {
         </div>
       </form>
     </div>
+    </>
   );
 }
 

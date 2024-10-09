@@ -6,6 +6,7 @@ import AddNote from './component/addNote';
 import SignIn from './component/SignIn';
 import SignUp from './component/SignUp';
 import Profile from './component/profile';
+import Notes from './component/Notes';
 import {
     BrowserRouter as Main,
   Routes,
@@ -28,6 +29,7 @@ function App() {
   <Route path='/sign-in' element={<SignIn/>}/>
   <Route path='/sign-up' element={<SignUp/>}/>
   <Route path='/profile' element={<Profile/>}/>
+  <Route path='/notes' element={<Notes/>}/>
 </Routes>
     </NoteState>
    </>

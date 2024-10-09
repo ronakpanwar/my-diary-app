@@ -39,7 +39,7 @@ function Navbar() {
 
         const LogOut = () => {
             localStorage.removeItem('token');
-            navigate('/sign-in');
+            navigate('/');
         };
 
         return (
@@ -79,15 +79,15 @@ function Navbar() {
                             </div>
                             <div className="hidden sm:ml-6 sm:flex space-x-4">
                                 <a
-                                    href="/"
-                                    className="rounded-md   px-3 py-2 text-sm font-medium text-[#48CFCB] hover:text-[#229799]"
+                                    href="/notes"
+                                    className="rounded-md   px-3 py-2 text-xl font-medium text-[#48CFCB] hover:text-[#229799]"
                                     aria-current="page"
                                 >
                                     Home
                                 </a>
                                 <a
                                     href="/add-note"
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-[#48CFCB]  hover:text-[#229799]"
+                                    className="rounded-md px-3 py-2 text-xl font-medium text-[#48CFCB]  hover:text-[#229799]"
                                 >
                                     Add Notes
                                 </a>
