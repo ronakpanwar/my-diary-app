@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
      <div className="bg-black p-4">
-  <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center sticky">
+  <div className="container mx-auto flex flex-col justify-between items-center sticky">
     <div className="text-white text-2xl font-bold mb-4 sm:mb-0">
       My-Diary
     </div>
