@@ -15,7 +15,7 @@ const Home = () => {
     <div className="text-white text-2xl font-bold mb-4 sm:mb-0">
       My-Diary
     </div>
-    <div className="space-y-2 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row">
+    <div className="space-y-2 sm:space-y-0 sm:space-x-4 flex">
       <a href="/sign-in">
         <button className="bg-transparent text-[#48CFCB] font-bold border border-[#48CFCB] py-2 px-4 rounded hover:text-[#229799] w-full sm:w-auto">
           Sign In
