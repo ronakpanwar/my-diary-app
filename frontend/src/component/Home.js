@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <>
       <div className="bg-black p-4">
-        <div className="container mx-auto flex  justify-between items-center sticky">
-          <div className="text-white text-2xl font-bold mb-4 sm:mb-0">
+        <div className="container sticky  mx-auto flex justify-around items-center">
+          <div className="text-white text-2xl font-bold">
             My-Diary
           </div>
           <div className="space-x-4">
@@ -25,16 +25,15 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="flex justify-center min-h-96 bg-[#F5F5F5]">
-        <div className="flex flex-col items-center my-8 px-6 sm:px-8 md:px-12 lg:px-20 py-8 sm:py-12">
-          <h1 className="flex justify-center items-center gap-2 text-3xl sm:text-4xl md:text-5xl font-bold text-black text-center">
+        <div className="flex flex-col items-center my-12 px-6 md:px-12 lg:px-20 py-12">
+          <h1 className="flex justify-center items-center gap-2 text-3xl sm:text-4xl md:text-5xl font-bold text-black p-2 text-center">
             <Typewriter
               text="Welcome to "
               cursorColor="black"
               textStyle={{
                 fontWeight: 'bold',
-                fontSize: '2rem',
+                fontSize: '2rem', // Adjusted for responsiveness
               }}
               startDelay={100}
               typeSpeed={100}
@@ -50,21 +49,26 @@ const Home = () => {
         </div>
       </div>
 
-      <footer className="bg-black text-white py-6">
-        <div className="container mx-auto text-center px-4">
-          <p className="text-sm sm:text-base">&copy; 2024 My-Diary. All rights reserved.</p>
-          <ul className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-6 mt-4 text-sm sm:text-base">
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="#" className="hover:underline">Terms of Service</a></li>
-            <li><a href="#" className="hover:underline">Contact Us</a></li>
+
+ 
+      <footer class="bg-black text-white py-6">
+        <div class="container mx-auto text-center">
+          <p>&copy; 2024 My-Diary. All rights reserved.</p>
+          <ul class="flex justify-center space-x-6 mt-4">
+            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" class="hover:underline">Terms of Service</a></li>
+            <li><a href="#" class="hover:underline">Contact Us</a></li>
           </ul>
-          <div className="flex justify-center mt-4 space-x-4">
-            <a href="https://www.facebook.com" className="text-gray-400 hover:text-white" aria-label="Facebook">Facebook</a>
-            <a href="https://www.twitter.com" className="text-gray-400 hover:text-white" aria-label="Twitter">Twitter</a>
-            <a href="https://www.instagram.com" className="text-gray-400 hover:text-white" aria-label="Instagram">Instagram</a>
+          <div class="mt-4">
+            <a href="https://www.facebook.com" class="mx-2 text-gray-400 hover:text-white" aria-label="Facebook">Facebook</a>
+            <a href="https://www.twitter.com" class="mx-2 text-gray-400 hover:text-white" aria-label="Twitter">Twitter</a>
+            <a href="https://www.instagram.com" class="mx-2 text-gray-400 hover:text-white" aria-label="Instagram">Instagram</a>
           </div>
         </div>
       </footer>
+
+
+  {/* <Notes/> */ }
 
 
       {/* <Notes/> */}
