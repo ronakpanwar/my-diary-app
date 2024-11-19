@@ -32,10 +32,15 @@ function Navbar() {
 
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isUserMenu , setIsUserMenu] = useState(false)
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+   const toggleHandle = ()=>{
+    setIsUserMenu(!isUserMenu)
+   }
 
     const LogOut = () => {
         localStorage.removeItem('token');
@@ -119,7 +124,7 @@ function Navbar() {
                                 id="user-menu-button"
                                 aria-expanded={isMenuOpen}
                                 aria-haspopup="true"
-                                onClick={toggleMenu}
+                                onClick={toggleHandle}
                             >
                                 <span className="sr-only">Open user menu</span>
                                 <div className="flex gap-2">
@@ -137,6 +142,25 @@ function Navbar() {
                     </div>
                 </div>
             </div>
+            {
+                isUserMenu && (
+                    <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button">
+                                    <a href="/profile" className="block px-4 py-2 text-sm text-gray-700" role="menuitem">
+                                        Your Profile
+                                    </a>
+                                    {/* <a href="/sign-in" className="block px-4 py-2 text-sm text-gray-700" role="menuitem">
+                                            Sign in
+                                        </a>
+                                        <a href="/sign-up" className="block px-4 py-2 text-sm text-gray-700" role="menuitem">
+                                            Sign Up
+                                        </a> */}
+                                    <a href="" className="block px-4 py-2 text-sm text-gray-700" onClick={LogOut} role="menuitem">
+                                        Log Out
+                                    </a>
+                                </div>
+                )
+            }
+            
 
             {/* Mobile menu */}
             {isMenuOpen && (
