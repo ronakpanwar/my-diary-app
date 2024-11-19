@@ -16,37 +16,41 @@ const Home = () => {
             My-Diary
           </div>
           <div className="space-x-4">
-          <a href="/sign-in"> <button className="bg-transparent text-[#48CFCB] font-bold border border-[#48CFCB] py-2 px-4 rounded  hover:text-[#229799]">
-             Sign In
+            <a href="/sign-in"> <button className="bg-transparent text-[#48CFCB] font-bold border border-[#48CFCB] py-2 px-4 rounded  hover:text-[#229799]">
+              Sign In
             </button></a>
             <a href="/sign-up"><button className="bg-[#48CFCB] font-bold text-black py-2 px-4 rounded hover:bg-[#229799] " >
-              Sign Up 
+              Sign Up
             </button></a>
           </div>
         </div>
       </div>
-      <div className="flex justify-center   min-h-96 bg-[#F5F5F5]">
-        <div className='flex flex-col my-24 items-center p-20'>
-          <h1 className="flex justify-center items-center gap-2 text-4xl font-bold text-black p-2">
+      <div className="flex justify-center min-h-96 bg-[#F5F5F5]">
+        <div className="flex flex-col items-center my-12 px-6 md:px-12 lg:px-20 py-12">
+          <h1 className="flex justify-center items-center gap-2 text-3xl sm:text-4xl md:text-5xl font-bold text-black p-2 text-center">
             <Typewriter
               text="Welcome to "
               cursorColor="black"
               textStyle={{
                 fontWeight: 'bold',
-                fontSize: '3rem',
+                fontSize: '2rem', // Adjusted for responsiveness
               }}
               startDelay={100}
               typeSpeed={100}
               hideCursorAfterText={true}
             />
-            <span className="text-[#48CFCB] text-5xl">My-Diary</span>
+            <span className="text-[#48CFCB] text-4xl sm:text-5xl md:text-6xl">
+              My-Diary
+            </span>
           </h1>
-          <p className='text-center px-20'>
+          <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mt-4">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus commodi excepturi veritatis laborum incidunt illum voluptate eveniet reprehenderit placeat quidem! Deserunt suscipit in dicta placeat quaerat.
           </p>
         </div>
-
       </div>
+
+
+ 
       <footer class="bg-black text-white py-6">
         <div class="container mx-auto text-center">
           <p>&copy; 2024 My-Diary. All rights reserved.</p>
@@ -64,7 +68,7 @@ const Home = () => {
       </footer>
 
 
-      {/* <Notes/> */}
+  {/* <Notes/> */ }
 
     </>
   )
