@@ -5,11 +5,11 @@ function Card(props) {
     const context = useContext(noteContext);
     const { deleteNote } = context;
 
+    const { note, updateNotes } = props;
     const handleDelete = () => {
         deleteNote(note._id); 
         window.location.reload();
     };
-    const { note, updateNotes } = props;
 
     return (
         <div className="col-md-3">
