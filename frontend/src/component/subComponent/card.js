@@ -19,9 +19,7 @@ function Card(props) {
                         <h5 className="card-title text-lg mx-10 font-bold">{note.title}</h5>
                         <i
                             className="fas fa-trash mx-2 text-red-500 cursor-pointer"
-                            onClick={() => {
-                                handleDelete() ;
-                            }}
+                            onClick={handleDelete}
                         ></i>
                         <i
                             className="fas fa-edit mx-2 text-blue-500 cursor-pointer"
