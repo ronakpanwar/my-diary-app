@@ -70,7 +70,7 @@ const url = "https://my-diary-app-api.vercel.app/";
       const json = await response.json()
 
       const newNote = notes.filter((note) => { return note.id !== id });
-    setNotes(newNote);
+      setNotes(newNote);
 
 
     } catch (error) {
