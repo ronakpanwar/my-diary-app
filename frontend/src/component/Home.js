@@ -25,7 +25,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center min-h-96 bg-[#F5F5F5]">
+      <div className="flex justify-center min-h-screen	 bg-[#F5F5F5]">
         <div className="flex flex-col items-center my-12 px-6 md:px-12 lg:px-20 py-12">
           <h1 className="flex justify-center items-center gap-2 text-3xl sm:text-4xl md:text-5xl font-bold text-black p-2 text-center">
             <Typewriter
@@ -39,7 +39,7 @@ const Home = () => {
               typeSpeed={100}
               hideCursorAfterText={true}
             />
-            <span className="text-[#48CFCB] text-4xl sm:text-5xl md:text-6xl">
+            <span className="text-[#48CFCB] text-3xl sm:text-5xl md:text-6xl">
               My-Diary
             </span>
           </h1>
